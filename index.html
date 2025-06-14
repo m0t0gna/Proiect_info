@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghid Complet Front-End Developer | Roadmap România</title>
+    <meta name="description" content="Parcursul pas cu pas pentru a deveni dezvoltator front-end în 2025. Ghid complet în limba română.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1>Frontend Roadmap</h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="#roadmap" class="nav-link">Roadmap</a>
+                    <a href="#about" class="nav-link">Despre</a>
+                    <a href="#progress" class="nav-link">Progres</a>
+                </div>
+                <div class="nav-actions">
+                    <button class="btn btn-secondary" id="resetProgress">Reset Progres</button>
+                    <button class="btn btn-primary" id="downloadBtn">Descarcă</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Ghid Complet Front-End Developer</h1>
+                <p class="hero-subtitle">Parcursul pas cu pas pentru a deveni dezvoltator front-end în 2025</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="totalTopics">0</span>
+                        <span class="stat-label">Subiecte</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="completedTopics">0</span>
+                        <span class="stat-label">Completate</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="progressPercentage">0%</span>
+                        <span class="stat-label">Progres</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="roadmap-section" id="roadmap">
+        <div class="container">
+            <div class="roadmap-header">
+                <h2>Roadmap Front-End Developer</h2>
+                <p>Urmează acest ghid pas cu pas pentru a-ți construi o carieră solidă în dezvoltarea front-end</p>
+            </div>
+
+            <!-- Legend -->
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color required"></div>
+                    <span>Obligatoriu</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color recommended"></div>
+                    <span>Recomandat</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color optional"></div>
+                    <span>Opțional</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color completed"></div>
+                    <span>Completat</span>
+                </div>
+            </div>
+
+            <!-- Roadmap Container -->
+            <div class="roadmap-container">
+                <!-- Internet Section -->
+                <div class="roadmap-section-block">
+                    <h3 class="section-title">1. Internet</h3>
+                    <div class="roadmap-nodes">
+                        <div class="roadmap-node required" data-topic="internet-basics">
+                            <span class="node-title">Cum funcționează Internetul?</span>
+                            <span class="node-description">Înțelegerea fundamentelor internetului</span>
+                        </div>
+                        <div class="roadmap-node required" data-topic="http">
+                            <span class="node-title">Ce este HTTP?</span>
+                            <span class="node-description">Protocolul de transfer hipertext</span>
+                        </div>
+                        <div class="roadmap-node required" data-topic="domain">
+                            <span class="node-title">Nume de domeniu</span>
+                            <span class="node-description">Cum funcționează domeniile web</span>
+                        </div>
+                        <div class="roadmap-node required" data-topic="hosting">
+                            <span class="node-title">Hosting și servere</span>
+                            <span class="node-description">Unde sunt găzduite site-urile web</span>
+                        </div>
+                        <div class="roadmap-node required" data-topic="dns">
+                            <span class="node-title">DNS</span>
+                            <span class="node-description">Sistemul de nume de domenii</span>
+                        </div>
+                        <div class="roadmap-node required" data-topic="browsers">
+                            <span class="node-title">Browsere web</span>
+                            <span class="node-description">Cum funcționează browserele</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HTML Section -->
+                <div class="roadmap-section-block">
+                    <h3 class="section-title">2. HTML</h3>
+                    <div class="roadmap-nodes">
+                        <div class="roadmap-node required" data-topic="html-basics">
+                            <span class="node-title">Noțiuni de bază HTML</span>
+                            <span class="node-description">Structura și elementele de bază</span>
+                        </div>
+                        <div class="roadmap-node required" data-topic="semantic-html">
+                            <span class="node-title">HTML semantic</span>
+                            <span class="node-description">Utilizarea corectă a elementelor semantice</span>
+                        </div>
+                        <div class="roadmap-node required" data-topic="forms">
+                            <span class="node-title">Formulare și validare</span>
+                            <span class="node-description">Crearea și validarea formularelor</span>
+                        </div>
+                        <div class="roadmap-node recommended" data-topic="accessibility">
+                            <span class="node-title">Accesibilitate web</span>
+                            <span class="node-description">Principii de accesibilitate</span>
+                        </div>
+                        <div class="roadmap-node recommended" data-topic="seo-basics">
+                            <span class="node-title">SEO de bază</span>
+                            <span class="node-description">Optimizarea pentru motoarele de căutare</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSS Section -->
+                <div class="roadmap-section-block">
+                    <h3 class="section-title">3. CSS</h3>
+                    <div class="roadmap-nodes">
+                        <div class="roadmap-node required" data-topic="css-basics">
+                            <span class="node-title">Fundamentele CSS</span>
+                            <span class="node-description">Selectori, proprietăți și valori</span>
+                        </div>
+                        <div class="roadmap-node required" data-topic="layouts">
+                            <span class="node-title">Layout-uri CSS</span>
+                            <span class="node-description">Flexbox, Grid și poziționare</span>
+                        </div>
+                        <div class="roadmap-node required" data-topic="responsive">
+                            <span class="node-title">Design responsiv</span>
+                            <span class="node-description">Adaptarea pentru toate dispozitivele</span>
+                        </div>
+                        <div class="roadmap-node recommended" data-topic="css-animations">
+                            <span class="node-title">Animații CSS</span>
+                            <span class="node-description">Tranziții și animații</span>
+                        </div>
+                        <div class="roadmap-node optional" data-topic="css-preprocessors">
+                            <span class="node-title">Preprocesoare CSS</span>
+                            <span class="node-description">Sass, Less și altele</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JavaScript Section -->
+                <div class="roadmap-section-block">
+                    <h3 class="section-title">4. JavaScript</h3>
+                    <div class="roadmap-nodes">
+                        <div class="roadmap-node required" data-topic="js-basics">
+                            <span class="node-title">Concepte de bază JS</span>
+                            <span class="node-description">Variabile, funcții, obiecte</span>
+                        </div>
+                        <div class="roadmap-node required" data-topic="dom">
+                            <span class="node-title">Manipularea DOM</span>
+                            <span class="node-description">Interacțiunea cu elementele HTML</span>
+                        </div>
+                        <div class="roadmap-node required" data-topic="fetch-api">
+                            <span class="node-title">Fetch API / Ajax</span>
+                            <span class="node-description">Cereri HTTP asincrone</span>
+                        </div>
+                        <div class="roadmap-node recommended" data-topic="es6">
+                            <span class="node-title">ES6+ Features</span>
+                            <span class="node-description">Funcționalități moderne JavaScript</span>
+                        </div>
+                        <div class="roadmap-node optional" data-topic="js-frameworks">
+                            <span class="node-title">Framework-uri JS</span>
+                            <span class="node-description">React, Vue, Angular</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version Control Section -->
+                <div class="roadmap-section-block">
+                    <h3 class="section-title">5. Control Versiuni</h3>
+                    <div class="roadmap-nodes">
+                        <div class="roadmap-node required" data-topic="git-basics">
+                            <span class="node-title">Introducere în Git</span>
+                            <span class="node-description">Comenzi de bază și workflow</span>
+                        </div>
+                        <div class="roadmap-node required" data-topic="github">
+                            <span class="node-title">GitHub</span>
+                            <span class="node-description">Colaborare și hosting de cod</span>
+                        </div>
+                        <div class="roadmap-node recommended" data-topic="git-advanced">
+                            <span class="node-title">Git avansat</span>
+                            <span class="node-description">Branching, merging, rebasing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>Despre acest ghid</h2>
+                <p>Acest roadmap a fost creat pentru a oferi o cale clară și structurată către cariera de front-end developer. Conținutul este organizat progresiv, de la concepte fundamentale la tehnologii avansate.</p>
+                <div class="about-features">
+                    <div class="feature">
+                        <h3>📚 Conținut structurat</h3>
+                        <p>Fiecare subiect este explicat pas cu pas, cu exemple practice</p>
+                    </div>
+                    <div class="feature">
+                        <h3>🎯 Progres urmărit</h3>
+                        <p>Urmărește-ți progresul și vezi cât de departe ai ajuns</p>
+                    </div>
+                    <div class="feature">
+                        <h3>🔄 Actualizat regulat</h3>
+                        <p>Conținutul este menținut la zi cu cele mai noi tehnologii</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for topic details -->
+    <div class="modal" id="topicModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle"></h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="modalContent"></div>
+                <div class="modal-actions">
+                    <button class="btn btn-success" id="markCompleted">Marchează ca completat</button>
+                    <button class="btn btn-secondary" id="markIncomplete">Marchează ca incomplet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Frontend Roadmap România. Creat pentru educație.</p>
+                <div class="footer-links">
+                    <a href="https://roadmap.sh" target="_blank">Inspirat de roadmap.sh</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/roadmap.js"></script>
+</body>
+</html>
+
