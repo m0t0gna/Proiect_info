@@ -656,6 +656,156 @@ git pull origin main</code></pre>
         `,
         type: 'required'
     }
+
+    // ...existing code...
+,'github-intro': {
+    title: 'Ce este GitHub?',
+    description: 'O platformă pentru găzduirea și colaborarea pe proiecte Git',
+    content: `
+        <h4>GitHub - Platforma de colaborare pentru dezvoltatori</h4>
+        <p>GitHub este o platformă online care permite dezvoltatorilor să găzduiască, să partajeze și să colaboreze la proiecte folosind sistemul de control al versiunilor Git.</p>
+        <ul>
+            <li>Permite gestionarea codului sursă în cloud</li>
+            <li>Oferă instrumente pentru colaborare, revizuire și managementul proiectelor</li>
+            <li>Este folosit atât pentru proiecte open-source, cât și private</li>
+        </ul>
+        <h4>Resurse utile:</h4>
+        <ul>
+            <li><a href="https://github.com/" target="_blank">GitHub.com</a></li>
+            <li><a href="https://docs.github.com/ro" target="_blank">Documentația oficială GitHub</a></li>
+        </ul>
+    `,
+    type: 'required'
+},
+'github-repo': {
+    title: 'Repozitoare (Repositories)',
+    description: 'Crearea și gestionarea proiectelor pe GitHub',
+    content: `
+        <h4>Ce este un repository?</h4>
+        <p>Un repository (repo) este un spațiu de stocare pentru cod, documentație și alte fișiere ale unui proiect.</p>
+        <ul>
+            <li>Poate fi public sau privat</li>
+            <li>Include istoricul modificărilor (commit-uri)</li>
+            <li>Permite colaborarea între mai mulți utilizatori</li>
+        </ul>
+        <h4>Crearea unui repository:</h4>
+        <ol>
+            <li>Accesează GitHub și apasă pe „New repository”</li>
+            <li>Completează numele și descrierea</li>
+            <li>Alege dacă va fi public sau privat</li>
+            <li>Inițializează cu un README (opțional)</li>
+        </ol>
+    `,
+    type: 'required'
+},
+'github-clone-push': {
+    title: 'Clone, Commit, Push',
+    description: 'Interacțiunea cu GitHub din terminal',
+    content: `
+        <h4>Clone, Commit, Push</h4>
+        <p>Aceste operațiuni sunt esențiale pentru lucrul cu GitHub din linia de comandă:</p>
+        <ul>
+            <li><strong>git clone</strong> - Copiază un repository de pe GitHub pe calculatorul tău</li>
+            <li><strong>git commit</strong> - Salvează modificările local, cu un mesaj descriptiv</li>
+            <li><strong>git push</strong> - Trimite commit-urile locale către repository-ul de pe GitHub</li>
+        </ul>
+        <h4>Exemplu de workflow:</h4>
+        <pre><code>git clone https://github.com/user/proiect.git
+cd proiect
+# modifici fișierele
+git add .
+git commit -m "Adaugă o nouă funcționalitate"
+git push origin main</code></pre>
+    `,
+    type: 'required'
+},
+'github-branches': {
+    title: 'Branch-uri',
+    description: 'Lucrul pe versiuni paralele ale codului',
+    content: `
+        <h4>Ce este un branch?</h4>
+        <p>Un branch este o ramură a proiectului care permite dezvoltarea de funcționalități noi fără a afecta codul principal.</p>
+        <ul>
+            <li>Branch-ul principal este de obicei <code>main</code> sau <code>master</code></li>
+            <li>Poți crea branch-uri pentru fiecare funcționalitate sau bugfix</li>
+            <li>La final, branch-urile se pot îmbina (merge) cu ramura principală</li>
+        </ul>
+        <h4>Comenzi utile:</h4>
+        <pre><code>git branch nume-branch
+git checkout nume-branch
+git merge nume-branch</code></pre>
+    `,
+    type: 'required'
+},
+'github-pull-requests': {
+    title: 'Pull Requests',
+    description: 'Propunerea de modificări și revizuirea codului',
+    content: `
+        <h4>Ce este un Pull Request?</h4>
+        <p>Un Pull Request (PR) este o propunere de a integra modificările dintr-un branch în altul (de obicei în <code>main</code>).</p>
+        <ul>
+            <li>Permite revizuirea codului de către alți membri ai echipei</li>
+            <li>Se pot adăuga comentarii și sugestii</li>
+            <li>Este esențial pentru colaborarea eficientă</li>
+        </ul>
+        <h4>Procesul unui Pull Request:</h4>
+        <ol>
+            <li>Deschizi un PR din branch-ul tău către <code>main</code></li>
+            <li>Alți membri revizuiesc și aprobă modificările</li>
+            <li>După aprobare, PR-ul este „mergiat” în branch-ul principal</li>
+        </ol>
+    `,
+    type: 'required'
+},
+'github-issues': {
+    title: 'Issues și Managementul Taskurilor',
+    description: 'Urmărirea bug-urilor și planificarea lucrului',
+    content: `
+        <h4>Ce sunt Issues?</h4>
+        <p>Issues sunt tichete folosite pentru a urmări bug-uri, sugestii, sarcini sau întrebări legate de proiect.</p>
+        <ul>
+            <li>Pot fi atribuite membrilor echipei</li>
+            <li>Pot avea etichete (labels) pentru organizare</li>
+            <li>Se pot închide când problema este rezolvată</li>
+        </ul>
+        <h4>Managementul taskurilor:</h4>
+        <ul>
+            <li>Folosește issues pentru a planifica și urmări progresul</li>
+            <li>Leagă Pull Requests de issues pentru transparență</li>
+        </ul>
+    `,
+    type: 'optional'
+},
+'github-actions': {
+    title: 'GitHub Actions',
+    description: 'Automatizarea proceselor (CI/CD)',
+    content: `
+        <h4>Ce sunt GitHub Actions?</h4>
+        <p>GitHub Actions este o platformă de automatizare care permite rularea de scripturi la anumite evenimente (ex: push, pull request).</p>
+        <ul>
+            <li>Automatizează testarea, build-ul și deploy-ul aplicațiilor</li>
+            <li>Folosește fișiere YAML pentru definirea workflow-urilor</li>
+            <li>Poți folosi acțiuni predefinite sau să creezi unele proprii</li>
+        </ul>
+        <h4>Exemplu de workflow:</h4>
+        <pre><code>.github/workflows/ci.yml
+---
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Rulează testele
+        run: npm test
+</code></pre>
+    `,
+    type: 'optional'
+}
+// ...existing code...
+
+    
 };
 
 // Funcții pentru gestionarea progresului
