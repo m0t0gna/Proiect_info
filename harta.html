@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harta Roadmap | Frontend Roadmap România</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/harta.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* sau alt fișier CSS unde este definită clasa map-title */
+        .map-title {
+          margin-top: 60px; /* ajustează valoarea după preferință */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1>Frontend Roadmap</h1>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html#roadmap" class="nav-link">Roadmap</a>
+                    <a href="index.html#about" class="nav-link">Despre</a>
+                    <a href="index.html#progress" class="nav-link">Progres</a>
+                    <a href="harta.html" class="nav-link active">Harta</a>
+                </div>
+                <div class="nav-actions">
+                    <button class="btn btn-secondary" id="resetProgress">Reset Progres</button>
+                    <button class="btn btn-primary" id="downloadBtn">Descarcă</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Legenda -->
+    <div class="map-legend">
+        <h4>Legenda</h4>
+        <div class="legend-item">
+            <div class="legend-color required"></div>
+            <span>Obligatoriu</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color recommended"></div>
+            <span>Recomandat</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color optional"></div>
+            <span>Opțional</span>
+        </div>
+    </div>
+
+    <!-- Container principal pentru hartă -->
+    <section class="map-container">
+        <h1 class="map-title">Harta Frontend Developer</h1>
+        <p class="map-description">O reprezentare vizuală a parcursului complet pentru a deveni dezvoltator frontend</p>
+        
+        <div class="roadmap-visual">
+            <!-- Primul rând: Internet -->
+            <div class="map-section-row">
+                <div class="map-section-column">
+                    <div class="map-main-node map-node required" data-topic="internet-basics">Internet</div>
+                    <div class="map-secondary-node map-node required" data-topic="http">HTTP</div>
+                    <div class="map-secondary-node map-node required" data-topic="domain">Domenii</div>
+                    <div class="map-secondary-node map-node required" data-topic="hosting">Hosting</div>
+                    <div class="map-secondary-node map-node required" data-topic="dns">DNS</div>
+                    <div class="map-secondary-node map-node required" data-topic="browsers">Browsere</div>
+                </div>
+            </div>
+
+            <!-- Al doilea rând: HTML și CSS -->
+            <div class="map-section-row">
+                <div class="map-section-column">
+                    <div class="map-main-node map-node required" data-topic="html-basics">HTML</div>
+                    <div class="map-secondary-node map-node required" data-topic="semantic-html">HTML Semantic</div>
+                    <div class="map-secondary-node map-node required" data-topic="forms">Formulare</div>
+                    <div class="map-secondary-node map-node recommended" data-topic="accessibility">Accesibilitate</div>
+                    <div class="map-secondary-node map-node recommended" data-topic="seo-basics">SEO</div>
+                </div>
+                
+                <div class="map-section-column">
+                    <div class="map-main-node map-node required" data-topic="css-basics">CSS</div>
+                    <div class="map-secondary-node map-node required" data-topic="layouts">Layout-uri</div>
+                    <div class="map-secondary-node map-node required" data-topic="responsive">Responsive</div>
+                    <div class="map-secondary-node map-node recommended" data-topic="css-animations">Animații</div>
+                    <div class="map-secondary-node map-node optional" data-topic="css-preprocessors">Preprocesoare</div>
+                </div>
+            </div>
+
+            <!-- Al treilea rând: JavaScript -->
+            <div class="map-section-row">
+                <div class="map-section-column">
+                    <div class="map-main-node map-node required" data-topic="js-basics">JavaScript</div>
+                    <div class="map-secondary-node map-node required" data-topic="dom">DOM</div>
+                    <div class="map-secondary-node map-node required" data-topic="fetch-api">Fetch API</div>
+                    <div class="map-secondary-node map-node recommended" data-topic="es6">ES6+</div>
+                    <div class="map-secondary-node map-node optional" data-topic="js-frameworks">Framework-uri</div>
+                </div>
+            </div>
+
+            <!-- Al patrulea rând: Version Control -->
+            <div class="map-section-row">
+                <div class="map-section-column">
+                    <div class="map-main-node map-node required" data-topic="git-basics">Git</div>
+                    <div class="map-secondary-node map-node required" data-topic="github-intro">GitHub</div>
+                    <div class="map-secondary-node map-node required" data-topic="github-repo">Repositories</div>
+                    <div class="map-secondary-node map-node required" data-topic="github-clone-push">Clone/Push</div>
+                    <div class="map-secondary-node map-node required" data-topic="github-branches">Branches</div>
+                    <div class="map-secondary-node map-node required" data-topic="github-pull-requests">Pull Requests</div>
+                    <div class="map-secondary-node map-node optional" data-topic="github-issues">Issues</div>
+                    <div class="map-secondary-node map-node optional" data-topic="github-actions">Actions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal pentru detalii (reutilizat din index.html) -->
+    <div class="modal" id="topicModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle"></h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="modalContent"></div>
+                <div class="modal-actions">
+                    <button class="btn btn-success" id="markCompleted">Marchează ca completat</button>
+                    <button class="btn btn-secondary" id="markIncomplete">Marchează ca incomplet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Funcționalitate pentru harta interactivă
+        document.addEventListener("DOMContentLoaded", function() {
+            // Adăugarea event listeners pentru nodurile hărții
+            const mapNodes = document.querySelectorAll('.map-node[data-topic]');
+            
+            mapNodes.forEach(node => {
+                node.addEventListener('click', function() {
+                    const topicId = this.getAttribute('data-topic');
+                    if (typeof modalManager !== 'undefined' && roadmapData[topicId]) {
+                        modalManager.open(topicId);
+                    } else {
+                        // Fallback dacă modalManager nu este disponibil
+                        const topic = roadmapData[topicId];
+                        if (topic) {
+                            alert(`${topic.title}\n\n${topic.description}`);
+                        }
+                    }
+                });
+            });
+
+            // Animații pentru liniile de conectare (opțional)
+            setTimeout(() => {
+                addConnectionLines();
+            }, 1000);
+        });
+
+        // Funcție pentru adăugarea liniilor de conectare vizuale
+        function addConnectionLines() {
+            const sections = document.querySelectorAll('.map-section-column');
+            
+            sections.forEach((section, index) => {
+                if (index < sections.length - 1) {
+                    // Adăugarea unei linii de conectare între secțiuni
+                    const line = document.createElement('div');
+                    line.className = 'connection-line vertical';
+                    line.style.height = '60px';
+                    line.style.left = '50%';
+                    line.style.transform = 'translateX(-50%)';
+                    line.style.bottom = '-60px';
+                    section.style.position = 'relative';
+                    section.appendChild(line);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+

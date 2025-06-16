@@ -1,24 +1,34 @@
 // Datele pentru roadmap
+
+// Datele pentru roadmap
 const roadmapData = {
     'internet-basics': {
         title: 'Cum funcționează Internetul?',
         description: 'Înțelegerea fundamentelor internetului',
         content: `
             <h4>Ce este Internetul?</h4>
-            <p>Internetul este o rețea globală de computere interconectate care comunică prin protocoale standardizate. Este infrastructura care permite accesul la World Wide Web.</p>
-            
-            <h4>Concepte cheie:</h4>
+            <p>Internetul este o rețea globală de computere și dispozitive interconectate, care comunică între ele folosind protocoale standard. Această infrastructură face posibilă navigarea web, emailul, streaming-ul și multe alte servicii.</p>
+            <h4>Componente fundamentale:</h4>
             <ul>
-                <li><strong>ISP (Internet Service Provider)</strong> - Furnizorul de servicii internet</li>
-                <li><strong>IP Address</strong> - Adresa unică a fiecărui dispozitiv conectat</li>
-                <li><strong>Router</strong> - Dispozitiv care direcționează traficul de date</li>
-                <li><strong>Pachete de date</strong> - Cum sunt transmise informațiile</li>
+                <li><strong>ISP (Internet Service Provider)</strong>: furnizorul care îți oferă acces la Internet (ex: Orange, Digi)</li>
+                <li><strong>IP Address</strong>: identificator numeric unic pentru fiecare dispozitiv conectat (ex: 192.168.0.1)</li>
+                <li><strong>Router</strong>: dispozitiv care conectează rețeaua locală la Internet</li>
+                <li><strong>Pachete de date</strong>: informațiile sunt trimise sub formă de pachete prin rețea</li>
+                <li><strong>DNS</strong>: traduce nume de domenii în adrese IP</li>
+                <li><strong>Firewall</strong>: protejează rețeaua de acces neautorizat</li>
             </ul>
-            
-            <h4>Resurse recomandate:</h4>
+            <h4>Cum ajunge o pagină web la tine?</h4>
+            <ol>
+                <li>Scrii un URL în browser</li>
+                <li>Browserul cere adresa IP prin DNS</li>
+                <li>Se face conexiunea către serverul web</li>
+                <li>Serverul trimite codul HTML, care este afișat</li>
+            </ol>
+            <h4>Resurse utile:</h4>
             <ul>
-                <li>Video: "How the Internet Works" - Khan Academy</li>
-                <li>Articol: "Internet Fundamentals" - MDN Web Docs</li>
+                <li><a href="https://www.youtube.com/watch?v=7_LPdttKXPc" target="_blank">How the Internet Works - Video</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work" target="_blank">MDN: How does the Internet work?</a></li>
+                <li><a href="https://www.cloudflare.com/learning/network-layer/what-is-the-internet/" target="_blank">Cloudflare: What is the Internet?</a></li>
             </ul>
         `,
         type: 'required'
@@ -29,21 +39,36 @@ const roadmapData = {
         content: `
             <h4>HTTP (HyperText Transfer Protocol)</h4>
             <p>HTTP este protocolul de comunicație folosit pentru transferul de date pe web. Este baza comunicării între browser și server.</p>
-            
-            <h4>Concepte importante:</h4>
+            <h4>Structura cererilor și răspunsurilor:</h4>
             <ul>
-                <li><strong>Request/Response</strong> - Ciclul de comunicație</li>
-                <li><strong>HTTP Methods</strong> - GET, POST, PUT, DELETE</li>
-                <li><strong>Status Codes</strong> - 200, 404, 500, etc.</li>
-                <li><strong>Headers</strong> - Metadate ale cererii/răspunsului</li>
-                <li><strong>HTTPS</strong> - Versiunea securizată cu SSL/TLS</li>
+                <li><strong>Request</strong>: browserul cere resurse (HTML, imagini, etc.)</li>
+                <li><strong>Response</strong>: serverul trimite înapoi datele cerute</li>
             </ul>
-            
-            <h4>Exemple practice:</h4>
+            <h4>Metode HTTP:</h4>
             <ul>
-                <li>Folosește Developer Tools pentru a vedea cererile HTTP</li>
-                <li>Înțelege diferența între GET și POST</li>
-                <li>Analizează header-ele unei cereri</li>
+                <li><strong>GET</strong>: obține date</li>
+                <li><strong>POST</strong>: trimite date (ex: formulare)</li>
+                <li><strong>PUT/DELETE</strong>: modifică/șterge date</li>
+                <li><strong>PATCH</strong>: modifică parțial date</li>
+            </ul>
+            <h4>Status codes:</h4>
+            <ul>
+                <li>200 OK - succes</li>
+                <li>301/302 Redirect - redirecționare</li>
+                <li>404 Not Found - resursa nu există</li>
+                <li>500 Server Error - eroare pe server</li>
+            </ul>
+            <h4>HTTPS:</h4>
+            <p>O versiune securizată a HTTP, folosește criptare SSL/TLS pentru protejarea datelor transmise.</p>
+            <h4>Headers și Cookies:</h4>
+            <ul>
+                <li>Headers transmit informații suplimentare (ex: Content-Type, Authorization)</li>
+                <li>Cookies stochează date pe client pentru sesiuni sau preferințe</li>
+            </ul>
+            <h4>Resurse practice:</h4>
+            <ul>
+                <li>Analizează cererile în tab-ul Network din DevTools</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank">MDN: HTTP Overview</a></li>
             </ul>
         `,
         type: 'required'
@@ -52,22 +77,25 @@ const roadmapData = {
         title: 'Nume de domeniu',
         description: 'Cum funcționează domeniile web',
         content: `
-            <h4>Ce sunt numele de domeniu?</h4>
-            <p>Un nume de domeniu este o adresă ușor de reținut care înlocuiește adresa IP numerică a unui server.</p>
-            
+            <h4>Ce este un nume de domeniu?</h4>
+            <p>Un domeniu este o adresă ușor de memorat care înlocuiește adresa IP a unui server. Ex: <strong>openai.com</strong></p>
             <h4>Structura unui domeniu:</h4>
             <ul>
-                <li><strong>TLD (Top Level Domain)</strong> - .com, .ro, .org</li>
-                <li><strong>Second Level Domain</strong> - numele principal</li>
-                <li><strong>Subdomain</strong> - www, blog, shop</li>
+                <li><strong>TLD</strong> (Top-Level Domain): .com, .org, .ro</li>
+                <li><strong>SLD</strong> (Second-Level Domain): openai în „openai.com”</li>
+                <li><strong>Subdomeniu</strong>: www, docs, blog</li>
             </ul>
-            
-            <h4>Procesul de înregistrare:</h4>
+            <h4>Înregistrarea unui domeniu:</h4>
+            <ol>
+                <li>Alegi un registrar (GoDaddy, Namecheap, etc.)</li>
+                <li>Verifici disponibilitatea</li>
+                <li>Plătești domeniul (anual)</li>
+                <li>Configurezi DNS-ul către serverul tău</li>
+            </ol>
+            <h4>Alte informații:</h4>
             <ul>
-                <li>Alegerea unui registrar de domenii</li>
-                <li>Verificarea disponibilității</li>
-                <li>Configurarea DNS-ului</li>
-                <li>Conectarea la hosting</li>
+                <li>Domeniile pot fi transferate între registrari</li>
+                <li>Protecția WHOIS pentru confidențialitate</li>
             </ul>
         `,
         type: 'required'
@@ -76,24 +104,28 @@ const roadmapData = {
         title: 'Hosting și servere',
         description: 'Unde sunt găzduite site-urile web',
         content: `
-            <h4>Ce este hosting-ul web?</h4>
-            <p>Hosting-ul web este serviciul care permite stocarea și accesarea site-urilor web pe internet prin servere dedicate.</p>
-            
+            <h4>Ce este web hosting?</h4>
+            <p>Este un serviciu care permite publicarea site-ului pe internet. Fără hosting, site-ul tău nu ar putea fi accesat online.</p>
             <h4>Tipuri de hosting:</h4>
             <ul>
-                <li><strong>Shared Hosting</strong> - Resurse partajate, cost redus</li>
-                <li><strong>VPS (Virtual Private Server)</strong> - Resurse dedicate virtuale</li>
-                <li><strong>Dedicated Server</strong> - Server fizic dedicat</li>
-                <li><strong>Cloud Hosting</strong> - Resurse scalabile în cloud</li>
+                <li><strong>Shared Hosting</strong> - multe site-uri pe același server</li>
+                <li><strong>VPS</strong> - server virtual cu resurse proprii</li>
+                <li><strong>Dedicated</strong> - întreg serverul este al tău</li>
+                <li><strong>Cloud Hosting</strong> - flexibil, scalabil, bazat pe mai multe servere</li>
+                <li><strong>Serverless</strong> - fără gestionarea directă a serverelor</li>
             </ul>
-            
-            <h4>Factori de luat în considerare:</h4>
+            <h4>Factori de alegere:</h4>
             <ul>
-                <li>Performanța și viteza</li>
-                <li>Uptime și fiabilitatea</li>
-                <li>Suportul tehnic</li>
-                <li>Scalabilitatea</li>
-                <li>Securitatea</li>
+                <li>Preț</li>
+                <li>Uptime garantat</li>
+                <li>Performanță și SSD</li>
+                <li>Panou de control (ex: cPanel)</li>
+                <li>Suport tehnic</li>
+                <li>Securitate și backup</li>
+            </ul>
+            <h4>Exemple de provideri:</h4>
+            <ul>
+                <li>HostGator, Bluehost, DigitalOcean, AWS, Google Cloud, Netlify, Vercel</li>
             </ul>
         `,
         type: 'required'
@@ -102,25 +134,27 @@ const roadmapData = {
         title: 'DNS',
         description: 'Sistemul de nume de domenii',
         content: `
-            <h4>DNS (Domain Name System)</h4>
-            <p>DNS este sistemul care traduce numele de domenii în adrese IP, permițând browserelor să găsească serverele corecte.</p>
-            
-            <h4>Cum funcționează DNS:</h4>
+            <h4>Ce este DNS?</h4>
+            <p>DNS (Domain Name System) traduce numele de domenii în adrese IP. Este ca o „agendă telefonică” a Internetului.</p>
+            <h4>Cum funcționează:</h4>
             <ol>
-                <li>Browser-ul verifică cache-ul local</li>
-                <li>Interogare la DNS resolver</li>
-                <li>Căutare în DNS hierarchy</li>
-                <li>Returnarea adresei IP</li>
-                <li>Conectarea la server</li>
+                <li>Scrii „openai.com” în browser</li>
+                <li>Browserul întreabă DNS-ul care este IP-ul</li>
+                <li>DNS răspunde cu IP-ul serverului</li>
+                <li>Se stabilește conexiunea și se încarcă pagina</li>
             </ol>
-            
-            <h4>Tipuri de înregistrări DNS:</h4>
+            <h4>Tipuri de înregistrări:</h4>
             <ul>
-                <li><strong>A Record</strong> - Mapează domeniul la IPv4</li>
-                <li><strong>AAAA Record</strong> - Mapează domeniul la IPv6</li>
-                <li><strong>CNAME</strong> - Alias pentru alt domeniu</li>
-                <li><strong>MX Record</strong> - Pentru email</li>
-                <li><strong>TXT Record</strong> - Text arbitrar</li>
+                <li><strong>A</strong>: IP IPv4</li>
+                <li><strong>AAAA</strong>: IP IPv6</li>
+                <li><strong>CNAME</strong>: alias (ex: www -> domeniu principal)</li>
+                <li><strong>MX</strong>: servere de email</li>
+                <li><strong>TXT</strong>: verificări, autentificări</li>
+                <li><strong>NS</strong>: name servers</li>
+            </ul>
+            <h4>Instrumente utile:</h4>
+            <ul>
+                <li><a href="https://dnschecker.org/" target="_blank">DNS Checker</a></li>
             </ul>
         `,
         type: 'required'
@@ -129,27 +163,29 @@ const roadmapData = {
         title: 'Browsere web',
         description: 'Cum funcționează browserele',
         content: `
-            <h4>Ce este un browser web?</h4>
-            <p>Browser-ul web este aplicația care interpretează și afișează conținutul web, permițând utilizatorilor să navigheze pe internet.</p>
-            
-            <h4>Componentele principale:</h4>
+            <h4>Ce este un browser?</h4>
+            <p>Este o aplicație care interpretează cod HTML/CSS/JS și afișează o pagină web interactivă pentru utilizator.</p>
+            <h4>Componente interne:</h4>
             <ul>
-                <li><strong>Rendering Engine</strong> - Interpretează HTML/CSS</li>
-                <li><strong>JavaScript Engine</strong> - Execută codul JavaScript</li>
-                <li><strong>Networking</strong> - Gestionează cererile HTTP</li>
-                <li><strong>Storage</strong> - Cookies, localStorage, etc.</li>
+                <li><strong>Rendering engine</strong>: interpretează HTML/CSS (ex: Blink, Gecko)</li>
+                <li><strong>JavaScript engine</strong>: rulează codul JS (ex: V8 în Chrome)</li>
+                <li><strong>Network layer</strong>: gestionează conexiunile HTTP</li>
+                <li><strong>Storage</strong>: cookies, sessionStorage, localStorage</li>
             </ul>
-            
             <h4>Browsere populare:</h4>
             <ul>
-                <li>Chrome (Blink engine)</li>
-                <li>Firefox (Gecko engine)</li>
-                <li>Safari (WebKit engine)</li>
-                <li>Edge (Blink engine)</li>
+                <li>Google Chrome</li>
+                <li>Mozilla Firefox</li>
+                <li>Apple Safari</li>
+                <li>Microsoft Edge</li>
             </ul>
-            
-            <h4>Developer Tools:</h4>
-            <p>Toate browserele moderne oferă instrumente pentru dezvoltatori care permit debugging și optimizarea site-urilor web.</p>
+            <h4>Instrumente pentru dezvoltatori:</h4>
+            <ul>
+                <li>Inspectarea DOM-ului</li>
+                <li>Debugging JS</li>
+                <li>Monitorizarea rețelei (Network)</li>
+                <li>Performance și Lighthouse</li>
+            </ul>
         `,
         type: 'required'
     },
@@ -158,276 +194,70 @@ const roadmapData = {
         description: 'Structura și elementele de bază',
         content: `
             <h4>HTML (HyperText Markup Language)</h4>
-            <p>HTML este limbajul de marcare standard pentru crearea paginilor web. Definește structura și conținutul unei pagini.</p>
-            
-            <h4>Structura de bază:</h4>
+            <p>HTML este limbajul standard de marcare folosit pentru a crea pagini web. Definește structura documentului, folosind etichete.</p>
+            <h4>Structura de bază a unui document HTML:</h4>
             <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="ro"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
+&lt;html&gt;
+  &lt;head&gt;
     &lt;title&gt;Titlul paginii&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;Titlu principal&lt;/h1&gt;
-    &lt;p&gt;Paragraf de text&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-            
-            <h4>Elemente esențiale:</h4>
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Salut lume!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+            <h4>Elemente frecvente:</h4>
             <ul>
-                <li><strong>Headings</strong> - h1, h2, h3, h4, h5, h6</li>
-                <li><strong>Paragrafe</strong> - p</li>
-                <li><strong>Linkuri</strong> - a href</li>
-                <li><strong>Imagini</strong> - img src alt</li>
-                <li><strong>Liste</strong> - ul, ol, li</li>
-                <li><strong>Diviziuni</strong> - div, span</li>
+                <li>&lt;h1&gt;-&lt;h6&gt; - titluri</li>
+                <li>&lt;p&gt; - paragraf</li>
+                <li>&lt;a&gt; - link</li>
+                <li>&lt;img&gt; - imagine</li>
+                <li>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt; - liste</li>
+                <li>&lt;div&gt;, &lt;span&gt; - containere</li>
+                <li>&lt;form&gt; - formulare</li>
+            </ul>
+            <h4>Semantica HTML:</h4>
+            <ul>
+                <li>&lt;header&gt;, &lt;footer&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;nav&gt;</li>
+            </ul>
+            <h4>Resurse utile:</h4>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN: HTML</a></li>
             </ul>
         `,
         type: 'required'
-    },
-    'semantic-html': {
-        title: 'HTML semantic',
-        description: 'Utilizarea corectă a elementelor semantice',
-        content: `
-            <h4>Ce este HTML-ul semantic?</h4>
-            <p>HTML-ul semantic folosește elemente care au o semnificație clară despre conținutul lor, îmbunătățind accesibilitatea și SEO-ul.</p>
-            
-            <h4>Elemente semantice principale:</h4>
-            <ul>
-                <li><strong>&lt;header&gt;</strong> - Antetul paginii sau secțiunii</li>
-                <li><strong>&lt;nav&gt;</strong> - Navigația principală</li>
-                <li><strong>&lt;main&gt;</strong> - Conținutul principal</li>
-                <li><strong>&lt;article&gt;</strong> - Conținut independent</li>
-                <li><strong>&lt;section&gt;</strong> - Secțiune tematică</li>
-                <li><strong>&lt;aside&gt;</strong> - Conținut secundar</li>
-                <li><strong>&lt;footer&gt;</strong> - Subsolul paginii</li>
-            </ul>
-            
-            <h4>Beneficii:</h4>
-            <ul>
-                <li>Îmbunătățește accesibilitatea</li>
-                <li>Optimizează pentru SEO</li>
-                <li>Facilitează mentenanța codului</li>
-                <li>Îmbunătățește experiența dezvoltatorilor</li>
-            </ul>
-        `,
-        type: 'required'
-    },
-    'forms': {
-        title: 'Formulare și validare',
-        description: 'Crearea și validarea formularelor',
-        content: `
-            <h4>Formulare HTML</h4>
-            <p>Formularele permit utilizatorilor să introducă și să trimită date către server.</p>
-            
-            <h4>Elemente de formular:</h4>
-            <ul>
-                <li><strong>&lt;form&gt;</strong> - Containerul principal</li>
-                <li><strong>&lt;input&gt;</strong> - Câmpuri de introducere</li>
-                <li><strong>&lt;textarea&gt;</strong> - Text pe mai multe linii</li>
-                <li><strong>&lt;select&gt;</strong> - Liste dropdown</li>
-                <li><strong>&lt;button&gt;</strong> - Butoane de acțiune</li>
-                <li><strong>&lt;label&gt;</strong> - Etichete pentru câmpuri</li>
-            </ul>
-            
-            <h4>Tipuri de input:</h4>
-            <ul>
-                <li>text, email, password</li>
-                <li>number, tel, url</li>
-                <li>date, time, datetime-local</li>
-                <li>checkbox, radio</li>
-                <li>file, hidden</li>
-            </ul>
-            
-            <h4>Validare HTML5:</h4>
-            <ul>
-                <li>required - câmp obligatoriu</li>
-                <li>pattern - expresii regulate</li>
-                <li>min/max - valori limită</li>
-                <li>minlength/maxlength - lungime text</li>
-            </ul>
-        `,
-        type: 'required'
-    },
-    'accessibility': {
-        title: 'Accesibilitate web',
-        description: 'Principii de accesibilitate',
-        content: `
-            <h4>Ce este accesibilitatea web?</h4>
-            <p>Accesibilitatea web înseamnă proiectarea site-urilor astfel încât să poată fi folosite de toate persoanele, inclusiv cele cu dizabilități.</p>
-            
-            <h4>Principiile WCAG:</h4>
-            <ul>
-                <li><strong>Perceptibil</strong> - Informația trebuie să fie prezentată în moduri pe care utilizatorii le pot percepe</li>
-                <li><strong>Operabil</strong> - Interfața trebuie să fie operabilă</li>
-                <li><strong>Înțelegibil</strong> - Informația și operarea UI trebuie să fie înțelegibile</li>
-                <li><strong>Robust</strong> - Conținutul trebuie să fie suficient de robust</li>
-            </ul>
-            
-            <h4>Tehnici practice:</h4>
-            <ul>
-                <li>Folosirea atributului alt pentru imagini</li>
-                <li>Structură logică cu headings</li>
-                <li>Contrast suficient pentru culori</li>
-                <li>Navigare cu tastatura</li>
-                <li>Etichete descriptive pentru formulare</li>
-                <li>ARIA labels și roles</li>
-            </ul>
-        `,
-        type: 'recommended'
-    },
-    'seo-basics': {
-        title: 'SEO de bază',
-        description: 'Optimizarea pentru motoarele de căutare',
-        content: `
-            <h4>SEO (Search Engine Optimization)</h4>
-            <p>SEO-ul implică optimizarea site-ului web pentru a îmbunătăți vizibilitatea în rezultatele motoarelor de căutare.</p>
-            
-            <h4>Elemente SEO de bază:</h4>
-            <ul>
-                <li><strong>Title tag</strong> - Titlul paginii în &lt;head&gt;</li>
-                <li><strong>Meta description</strong> - Descrierea paginii</li>
-                <li><strong>Headings</strong> - Structură ierarhică H1-H6</li>
-                <li><strong>URL structure</strong> - URL-uri descriptive</li>
-                <li><strong>Alt text</strong> - Descrieri pentru imagini</li>
-                <li><strong>Internal linking</strong> - Linkuri între pagini</li>
-            </ul>
-            
-            <h4>Factori tehnici:</h4>
-            <ul>
-                <li>Viteza de încărcare</li>
-                <li>Mobile-friendliness</li>
-                <li>HTTPS</li>
-                <li>Structured data</li>
-                <li>XML sitemap</li>
-            </ul>
-            
-            <h4>Instrumente utile:</h4>
-            <ul>
-                <li>Google Search Console</li>
-                <li>Google PageSpeed Insights</li>
-                <li>Lighthouse</li>
-            </ul>
-        `,
-        type: 'recommended'
     },
     'css-basics': {
         title: 'Fundamentele CSS',
         description: 'Selectori, proprietăți și valori',
         content: `
             <h4>CSS (Cascading Style Sheets)</h4>
-            <p>CSS este limbajul folosit pentru stilizarea documentelor HTML, controlând aspectul vizual al paginilor web.</p>
-            
-            <h4>Sintaxa CSS:</h4>
-            <pre><code>selector {
-    proprietate: valoare;
-    alta-proprietate: alta-valoare;
+            <p>CSS este limbajul folosit pentru a stiliza paginile HTML: culori, poziționare, fonturi și layout.</p>
+            <h4>Exemplu:</h4>
+            <pre><code>p {
+  color: blue;
+  font-size: 16px;
 }</code></pre>
-            
-            <h4>Tipuri de selectori:</h4>
+            <h4>Selectori:</h4>
             <ul>
-                <li><strong>Element</strong> - p, h1, div</li>
-                <li><strong>Class</strong> - .nume-clasa</li>
-                <li><strong>ID</strong> - #nume-id</li>
-                <li><strong>Attribute</strong> - [href], [type="text"]</li>
-                <li><strong>Pseudo-class</strong> - :hover, :focus</li>
-                <li><strong>Pseudo-element</strong> - ::before, ::after</li>
+                <li>Element: <code>p</code></li>
+                <li>Clasă: <code>.nume-clasa</code></li>
+                <li>ID: <code>#id</code></li>
+                <li>Pseudo-clasă: <code>a:hover</code></li>
             </ul>
-            
-            <h4>Proprietăți esențiale:</h4>
+            <h4>Proprietăți frecvente:</h4>
             <ul>
                 <li>color, background-color</li>
-                <li>font-family, font-size, font-weight</li>
-                <li>margin, padding</li>
+                <li>margin, padding, border</li>
                 <li>width, height</li>
-                <li>display, position</li>
-                <li>border, border-radius</li>
+                <li>font-family, font-size</li>
+                <li>display, position, flex, grid</li>
             </ul>
-            
-            <h4>Cascada și specificitate:</h4>
-            <p>CSS aplică stilurile în funcție de specificitate și ordinea în care sunt definite.</p>
-        `,
-        type: 'required'
-    },
-    'layouts': {
-        title: 'Layout-uri CSS',
-        description: 'Flexbox, Grid și poziționare',
-        content: `
-            <h4>Sisteme de layout în CSS</h4>
-            <p>CSS oferă mai multe metode pentru crearea layout-urilor complexe și responsive.</p>
-            
-            <h4>Flexbox:</h4>
+            <h4>Resurse utile:</h4>
             <ul>
-                <li>Layout unidimensional (rând sau coloană)</li>
-                <li>display: flex</li>
-                <li>justify-content, align-items</li>
-                <li>flex-direction, flex-wrap</li>
-                <li>flex-grow, flex-shrink, flex-basis</li>
+                <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS Tricks: Flexbox</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN: CSS</a></li>
             </ul>
-            
-            <h4>CSS Grid:</h4>
-            <ul>
-                <li>Layout bidimensional (rânduri și coloane)</li>
-                <li>display: grid</li>
-                <li>grid-template-columns, grid-template-rows</li>
-                <li>grid-gap, grid-area</li>
-                <li>grid-auto-flow</li>
-            </ul>
-            
-            <h4>Poziționare:</h4>
-            <ul>
-                <li><strong>static</strong> - poziționare normală</li>
-                <li><strong>relative</strong> - relativ la poziția normală</li>
-                <li><strong>absolute</strong> - relativ la primul părinte poziționat</li>
-                <li><strong>fixed</strong> - relativ la viewport</li>
-                <li><strong>sticky</strong> - combinație între relative și fixed</li>
-            </ul>
-        `,
-        type: 'required'
-    },
-    'responsive': {
-        title: 'Design responsiv',
-        description: 'Adaptarea pentru toate dispozitivele',
-        content: `
-            <h4>Ce este design-ul responsiv?</h4>
-            <p>Design-ul responsiv asigură că site-ul web arată și funcționează bine pe toate dispozitivele și dimensiunile de ecran.</p>
-            
-            <h4>Tehnici principale:</h4>
-            <ul>
-                <li><strong>Fluid grids</strong> - Layout-uri flexibile cu procente</li>
-                <li><strong>Flexible images</strong> - Imagini care se adaptează</li>
-                <li><strong>Media queries</strong> - Stiluri condiționale</li>
-            </ul>
-            
-            <h4>Media queries:</h4>
-            <pre><code>/* Mobile first */
-.container {
-    width: 100%;
-}
-
-/* Tablet */
-@media (min-width: 768px) {
-    .container {
-        width: 750px;
-    }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-    .container {
-        width: 1000px;
-    }
-}</code></pre>
-            
-            <h4>Breakpoints comune:</h4>
-            <ul>
-                <li>Mobile: 320px - 767px</li>
-                <li>Tablet: 768px - 1023px</li>
-                <li>Desktop: 1024px+</li>
-            </ul>
-            
-            <h4>Viewport meta tag:</h4>
-            <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
         `,
         type: 'required'
     },
@@ -435,136 +265,32 @@ const roadmapData = {
         title: 'Concepte de bază JS',
         description: 'Variabile, funcții, obiecte',
         content: `
-            <h4>JavaScript - Limbajul web-ului</h4>
-            <p>JavaScript este limbajul de programare care aduce interactivitate paginilor web.</p>
-            
-            <h4>Variabile și tipuri de date:</h4>
-            <pre><code>// Declararea variabilelor
-let nume = "Ion";
-const varsta = 25;
-var oras = "București";
-
-// Tipuri de date
-let numar = 42;
-let text = "Hello World";
-let boolean = true;
-let array = [1, 2, 3];
-let obiect = {nume: "Ion", varsta: 25};</code></pre>
-            
+            <h4>JavaScript</h4>
+            <p>JS este limbajul care adaugă interactivitate site-urilor. Este un limbaj de programare rulabil în browser.</p>
+            <h4>Variabile:</h4>
+            <pre><code>let nume = "Ion";
+const PI = 3.14;</code></pre>
             <h4>Funcții:</h4>
-            <pre><code>// Funcție clasică
-function salut(nume) {
-    return "Salut, " + nume + "!";
-}
-
-// Arrow function
-const salut2 = (nume) => {
-    return \`Salut, \${nume}!\`;
-}
-
-// Arrow function scurtă
-const salut3 = nume => \`Salut, \${nume}!\`;</code></pre>
-            
-            <h4>Structuri de control:</h4>
-            <ul>
-                <li>if/else statements</li>
-                <li>for/while loops</li>
-                <li>switch statements</li>
-                <li>try/catch pentru erori</li>
-            </ul>
-        `,
-        type: 'required'
-    },
-    'dom': {
-        title: 'Manipularea DOM',
-        description: 'Interacțiunea cu elementele HTML',
-        content: `
-            <h4>DOM (Document Object Model)</h4>
-            <p>DOM-ul este reprezentarea programatică a documentului HTML, permițând JavaScript să modifice conținutul și structura paginii.</p>
-            
-            <h4>Selectarea elementelor:</h4>
-            <pre><code>// Selectori
-const element = document.getElementById('id');
-const elements = document.getElementsByClassName('class');
-const element2 = document.querySelector('.class');
-const elements2 = document.querySelectorAll('div');</code></pre>
-            
-            <h4>Modificarea conținutului:</h4>
-            <pre><code>// Schimbarea textului
-element.textContent = "Text nou";
-element.innerHTML = "&lt;strong&gt;Text bold&lt;/strong&gt;";
-
-// Modificarea atributelor
-element.setAttribute('class', 'noua-clasa');
-element.src = 'imagine-noua.jpg';</code></pre>
-            
-            <h4>Evenimente:</h4>
-            <pre><code>// Event listeners
-button.addEventListener('click', function() {
-    console.log('Butonul a fost apăsat!');
-});
-
-// Arrow function
-button.addEventListener('click', () => {
-    console.log('Butonul a fost apăsat!');
-});</code></pre>
-            
-            <h4>Crearea și ștergerea elementelor:</h4>
-            <pre><code>// Crearea
-const nouElement = document.createElement('div');
-nouElement.textContent = 'Element nou';
-document.body.appendChild(nouElement);
-
-// Ștergerea
-element.remove();</code></pre>
-        `,
-        type: 'required'
-    },
-    'fetch-api': {
-        title: 'Fetch API / Ajax',
-        description: 'Cereri HTTP asincrone',
-        content: `
-            <h4>Fetch API</h4>
-            <p>Fetch API permite realizarea de cereri HTTP asincrone pentru a obține sau trimite date către server fără a reîncărca pagina.</p>
-            
-            <h4>Sintaxa de bază:</h4>
-            <pre><code>// GET request
-fetch('https://api.example.com/data')
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Eroare:', error));</code></pre>
-            
-            <h4>Async/Await:</h4>
-            <pre><code>async function getData() {
-    try {
-        const response = await fetch('https://api.example.com/data');
-        const data = await response.json();
-        console.log(data);
-    } catch (error) {
-        console.error('Eroare:', error);
-    }
+            <pre><code>function salut(nume) {
+  return "Salut, " + nume;
 }</code></pre>
-            
-            <h4>POST request:</h4>
-            <pre><code>fetch('https://api.example.com/data', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-        nume: 'Ion',
-        email: 'ion@example.com'
-    })
-})
-.then(response => response.json())
-.then(data => console.log(data));</code></pre>
-            
-            <h4>Gestionarea erorilor:</h4>
+            <h4>Obiecte:</h4>
+            <pre><code>const persoana = {
+  nume: "Ana",
+  varsta: 25
+};</code></pre>
+            <h4>Tipuri de date:</h4>
             <ul>
-                <li>Verificarea response.ok</li>
-                <li>Tratarea erorilor de rețea</li>
-                <li>Timeout-uri</li>
-                <li>Retry logic</li>
+                <li>string, number, boolean, object, array, null, undefined</li>
+            </ul>
+            <h4>Evenimente și DOM:</h4>
+            <ul>
+                <li>addEventListener, manipularea elementelor HTML</li>
+            </ul>
+            <h4>Resurse utile:</h4>
+            <ul>
+                <li><a href="https://javascript.info/" target="_blank">JavaScript.info</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN: JavaScript</a></li>
             </ul>
         `,
         type: 'required'
@@ -573,40 +299,22 @@ fetch('https://api.example.com/data')
         title: 'Introducere în Git',
         description: 'Comenzi de bază și workflow',
         content: `
-            <h4>Git - Sistemul de control al versiunilor</h4>
-            <p>Git este un sistem distribuit de control al versiunilor care urmărește modificările în fișiere și permite colaborarea între dezvoltatori.</p>
-            
+            <h4>Git - Sistem de control al versiunii</h4>
+            <p>Git urmărește modificările codului în timp, permițând colaborarea și revenirea la versiuni anterioare.</p>
             <h4>Comenzi esențiale:</h4>
-            <pre><code># Inițializarea unui repository
-git init
-
-# Clonarea unui repository
-git clone https://github.com/user/repo.git
-
-# Verificarea statusului
-git status
-
-# Adăugarea fișierelor
+            <pre><code>git init
 git add .
-git add nume-fisier.txt
-
-# Commit-ul modificărilor
-git commit -m "Mesajul commit-ului"
-
-# Împingerea către repository remote
-git push origin main
-
-# Tragerea modificărilor
-git pull origin main</code></pre>
-            
-            <h4>Workflow de bază:</h4>
+git commit -m "Mesaj"
+git status
+git log
+git push</code></pre>
+            <h4>Workflow tipic:</h4>
             <ol>
-                <li>Modifică fișierele</li>
-                <li>git add pentru staging</li>
-                <li>git commit pentru salvare</li>
-                <li>git push pentru sincronizare</li>
+                <li>Scrii cod</li>
+                <li>git add .</li>
+                <li>git commit -m "Mesaj"</li>
+                <li>git push</li>
             </ol>
-            
             <h4>Concepte importante:</h4>
             <ul>
                 <li><strong>Repository</strong> - Depozitul de cod</li>
@@ -614,198 +322,140 @@ git pull origin main</code></pre>
                 <li><strong>Branch</strong> - Ramură de dezvoltare</li>
                 <li><strong>Merge</strong> - Combinarea ramurilor</li>
             </ul>
+            <h4>Resurse utile:</h4>
+            <ul>
+                <li><a href="https://git-scm.com/doc" target="_blank">Documentație oficială Git</a></li>
+                <li><a href="https://learngitbranching.js.org/" target="_blank">Learn Git Branching</a></li>
+            </ul>
         `,
         type: 'required'
     },
-    'github': {
-        title: 'GitHub',
-        description: 'Colaborare și hosting de cod',
+    'github-intro': {
+        title: 'Ce este GitHub?',
+        description: 'O platformă pentru găzduirea și colaborarea pe proiecte Git',
         content: `
-            <h4>GitHub - Platforma pentru dezvoltatori</h4>
-            <p>GitHub este o platformă de hosting pentru repository-uri Git care facilitează colaborarea și gestionarea proiectelor de software.</p>
-            
-            <h4>Funcționalități principale:</h4>
+            <h4>GitHub</h4>
+            <p>GitHub este o platformă online care permite dezvoltatorilor să găzduiască, să partajeze și să colaboreze la proiecte folosind Git.</p>
             <ul>
-                <li><strong>Repository hosting</strong> - Găzduirea codului</li>
-                <li><strong>Issue tracking</strong> - Urmărirea bug-urilor</li>
-                <li><strong>Pull requests</strong> - Revizuirea codului</li>
-                <li><strong>GitHub Actions</strong> - CI/CD</li>
-                <li><strong>GitHub Pages</strong> - Hosting gratuit pentru site-uri</li>
+                <li>Permite versionarea codului și colaborarea în echipă</li>
+                <li>Oferă instrumente pentru code review, issue tracking și CI/CD</li>
+                <li>Proiectele pot fi publice sau private</li>
             </ul>
-            
-            <h4>Workflow colaborativ:</h4>
-            <ol>
-                <li>Fork repository-ul</li>
-                <li>Clone local</li>
-                <li>Creează branch nou</li>
-                <li>Fă modificările</li>
-                <li>Push branch-ul</li>
-                <li>Creează Pull Request</li>
-                <li>Code review</li>
-                <li>Merge în main</li>
-            </ol>
-            
-            <h4>Best practices:</h4>
+            <h4>Resurse utile:</h4>
             <ul>
-                <li>README.md descriptiv</li>
-                <li>Commit messages clare</li>
-                <li>Folosirea .gitignore</li>
-                <li>Documentația codului</li>
-                <li>Licențe pentru proiecte</li>
+                <li><a href="https://docs.github.com/en/get-started" target="_blank">GitHub Docs: Get started</a></li>
             </ul>
         `,
         type: 'required'
-    }
-
-    // ...existing code...
-,'github-intro': {
-    title: 'Ce este GitHub?',
-    description: 'O platformă pentru găzduirea și colaborarea pe proiecte Git',
-    content: `
-        <h4>GitHub - Platforma de colaborare pentru dezvoltatori</h4>
-        <p>GitHub este o platformă online care permite dezvoltatorilor să găzduiască, să partajeze și să colaboreze la proiecte folosind sistemul de control al versiunilor Git.</p>
-        <ul>
-            <li>Permite gestionarea codului sursă în cloud</li>
-            <li>Oferă instrumente pentru colaborare, revizuire și managementul proiectelor</li>
-            <li>Este folosit atât pentru proiecte open-source, cât și private</li>
-        </ul>
-        <h4>Resurse utile:</h4>
-        <ul>
-            <li><a href="https://github.com/" target="_blank">GitHub.com</a></li>
-            <li><a href="https://docs.github.com/ro" target="_blank">Documentația oficială GitHub</a></li>
-        </ul>
-    `,
-    type: 'required'
-},
-'github-repo': {
-    title: 'Repozitoare (Repositories)',
-    description: 'Crearea și gestionarea proiectelor pe GitHub',
-    content: `
-        <h4>Ce este un repository?</h4>
-        <p>Un repository (repo) este un spațiu de stocare pentru cod, documentație și alte fișiere ale unui proiect.</p>
-        <ul>
-            <li>Poate fi public sau privat</li>
-            <li>Include istoricul modificărilor (commit-uri)</li>
-            <li>Permite colaborarea între mai mulți utilizatori</li>
-        </ul>
-        <h4>Crearea unui repository:</h4>
-        <ol>
-            <li>Accesează GitHub și apasă pe „New repository”</li>
-            <li>Completează numele și descrierea</li>
-            <li>Alege dacă va fi public sau privat</li>
-            <li>Inițializează cu un README (opțional)</li>
-        </ol>
-    `,
-    type: 'required'
-},
-'github-clone-push': {
-    title: 'Clone, Commit, Push',
-    description: 'Interacțiunea cu GitHub din terminal',
-    content: `
-        <h4>Clone, Commit, Push</h4>
-        <p>Aceste operațiuni sunt esențiale pentru lucrul cu GitHub din linia de comandă:</p>
-        <ul>
-            <li><strong>git clone</strong> - Copiază un repository de pe GitHub pe calculatorul tău</li>
-            <li><strong>git commit</strong> - Salvează modificările local, cu un mesaj descriptiv</li>
-            <li><strong>git push</strong> - Trimite commit-urile locale către repository-ul de pe GitHub</li>
-        </ul>
-        <h4>Exemplu de workflow:</h4>
-        <pre><code>git clone https://github.com/user/proiect.git
-cd proiect
-# modifici fișierele
+    },
+    'github-repo': {
+        title: 'Repozitoare (Repositories)',
+        description: 'Crearea și gestionarea proiectelor pe GitHub',
+        content: `
+            <h4>Ce este un repository?</h4>
+            <p>Un repository (repo) este un depozit de cod sursă și istoricul modificărilor sale.</p>
+            <ul>
+                <li>Poți crea un repo nou din interfața GitHub</li>
+                <li>Fiecare repo are propriul istoric Git</li>
+                <li>Poate conține cod, documentație, wiki, issues</li>
+            </ul>
+            <h4>Resurse utile:</h4>
+            <ul>
+                <li><a href="https://docs.github.com/en/repositories" target="_blank">GitHub Docs: About repositories</a></li>
+            </ul>
+        `,
+        type: 'required'
+    },
+    'github-clone-push': {
+        title: 'Clone, Commit, Push',
+        description: 'Interacțiunea cu GitHub din terminal',
+        content: `
+            <h4>Clone, Commit, Push</h4>
+            <ul>
+                <li><strong>git clone</strong>: descarcă un repo de pe GitHub pe calculatorul tău</li>
+                <li><strong>git commit</strong>: salvează modificările local</li>
+                <li><strong>git push</strong>: trimite modificările pe GitHub</li>
+            </ul>
+            <pre><code>git clone https://github.com/user/repo.git
 git add .
-git commit -m "Adaugă o nouă funcționalitate"
-git push origin main</code></pre>
-    `,
-    type: 'required'
-},
-'github-branches': {
-    title: 'Branch-uri',
-    description: 'Lucrul pe versiuni paralele ale codului',
-    content: `
-        <h4>Ce este un branch?</h4>
-        <p>Un branch este o ramură a proiectului care permite dezvoltarea de funcționalități noi fără a afecta codul principal.</p>
-        <ul>
-            <li>Branch-ul principal este de obicei <code>main</code> sau <code>master</code></li>
-            <li>Poți crea branch-uri pentru fiecare funcționalitate sau bugfix</li>
-            <li>La final, branch-urile se pot îmbina (merge) cu ramura principală</li>
-        </ul>
-        <h4>Comenzi utile:</h4>
-        <pre><code>git branch nume-branch
-git checkout nume-branch
-git merge nume-branch</code></pre>
-    `,
-    type: 'required'
-},
-'github-pull-requests': {
-    title: 'Pull Requests',
-    description: 'Propunerea de modificări și revizuirea codului',
-    content: `
-        <h4>Ce este un Pull Request?</h4>
-        <p>Un Pull Request (PR) este o propunere de a integra modificările dintr-un branch în altul (de obicei în <code>main</code>).</p>
-        <ul>
-            <li>Permite revizuirea codului de către alți membri ai echipei</li>
-            <li>Se pot adăuga comentarii și sugestii</li>
-            <li>Este esențial pentru colaborarea eficientă</li>
-        </ul>
-        <h4>Procesul unui Pull Request:</h4>
-        <ol>
-            <li>Deschizi un PR din branch-ul tău către <code>main</code></li>
-            <li>Alți membri revizuiesc și aprobă modificările</li>
-            <li>După aprobare, PR-ul este „mergiat” în branch-ul principal</li>
-        </ol>
-    `,
-    type: 'required'
-},
-'github-issues': {
-    title: 'Issues și Managementul Taskurilor',
-    description: 'Urmărirea bug-urilor și planificarea lucrului',
-    content: `
-        <h4>Ce sunt Issues?</h4>
-        <p>Issues sunt tichete folosite pentru a urmări bug-uri, sugestii, sarcini sau întrebări legate de proiect.</p>
-        <ul>
-            <li>Pot fi atribuite membrilor echipei</li>
-            <li>Pot avea etichete (labels) pentru organizare</li>
-            <li>Se pot închide când problema este rezolvată</li>
-        </ul>
-        <h4>Managementul taskurilor:</h4>
-        <ul>
-            <li>Folosește issues pentru a planifica și urmări progresul</li>
-            <li>Leagă Pull Requests de issues pentru transparență</li>
-        </ul>
-    `,
-    type: 'optional'
-},
-'github-actions': {
-    title: 'GitHub Actions',
-    description: 'Automatizarea proceselor (CI/CD)',
-    content: `
-        <h4>Ce sunt GitHub Actions?</h4>
-        <p>GitHub Actions este o platformă de automatizare care permite rularea de scripturi la anumite evenimente (ex: push, pull request).</p>
-        <ul>
-            <li>Automatizează testarea, build-ul și deploy-ul aplicațiilor</li>
-            <li>Folosește fișiere YAML pentru definirea workflow-urilor</li>
-            <li>Poți folosi acțiuni predefinite sau să creezi unele proprii</li>
-        </ul>
-        <h4>Exemplu de workflow:</h4>
-        <pre><code>.github/workflows/ci.yml
----
-name: CI
-on: [push]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Rulează testele
-        run: npm test
-</code></pre>
-    `,
-    type: 'optional'
-}
-// ...existing code...
-
-    
+git commit -m "Mesaj"
+git push</code></pre>
+            <h4>Resurse utile:</h4>
+            <ul>
+                <li><a href="https://docs.github.com/en/get-started/quickstart" target="_blank">GitHub Quickstart</a></li>
+            </ul>
+        `,
+        type: 'required'
+    },
+    'github-branches': {
+        title: 'Branch-uri',
+        description: 'Lucrul pe versiuni paralele ale codului',
+        content: `
+            <h4>Branch-uri</h4>
+            <p>Branch-urile permit dezvoltarea de funcționalități noi fără a afecta codul principal.</p>
+            <ul>
+                <li><strong>git branch nume</strong>: creează o ramură nouă</li>
+                <li><strong>git checkout nume</strong>: schimbă ramura curentă</li>
+                <li><strong>git merge nume</strong>: unește o ramură cu alta</li>
+            </ul>
+            <h4>Resurse utile:</h4>
+            <ul>
+                <li><a href="https://www.atlassian.com/git/tutorials/using-branches" target="_blank">Git Branches Tutorial</a></li>
+            </ul>
+        `,
+        type: 'required'
+    },
+    'github-pull-requests': {
+        title: 'Pull Requests',
+        description: 'Propunerea de modificări și revizuirea codului',
+        content: `
+            <h4>Pull Request (PR)</h4>
+            <p>Un pull request este o propunere de a integra modificările dintr-o ramură în alta (de obicei în main).</p>
+            <ul>
+                <li>Permite code review și discuții înainte de integrare</li>
+                <li>Poate declanșa acțiuni automate (CI/CD)</li>
+            </ul>
+            <h4>Resurse utile:</h4>
+            <ul>
+                <li><a href="https://docs.github.com/en/pull-requests" target="_blank">GitHub Docs: Pull requests</a></li>
+            </ul>
+        `,
+        type: 'required'
+    },
+    'github-issues': {
+        title: 'Issues și Managementul Taskurilor',
+        description: 'Urmărirea bug-urilor și planificarea lucrului',
+        content: `
+            <h4>Issues</h4>
+            <p>Issues sunt folosite pentru a urmări bug-uri, sugestii și taskuri.</p>
+            <ul>
+                <li>Fiecare issue poate avea etichete, asignees, milestone</li>
+                <li>Poți închide sau comenta pe un issue</li>
+            </ul>
+            <h4>Resurse utile:</h4>
+            <ul>
+                <li><a href="https://docs.github.com/en/issues" target="_blank">GitHub Docs: Issues</a></li>
+            </ul>
+        `,
+        type: 'optional'
+    },
+    'github-actions': {
+        title: 'GitHub Actions',
+        description: 'Automatizarea proceselor (CI/CD)',
+        content: `
+            <h4>GitHub Actions</h4>
+            <p>GitHub Actions permite automatizarea fluxurilor de lucru (build, test, deploy) direct din repo.</p>
+            <ul>
+                <li>Scrii workflow-uri în fișiere YAML în .github/workflows</li>
+                <li>Poți automatiza testarea, build-ul, deploy-ul și multe altele</li>
+            </ul>
+            <h4>Resurse utile:</h4>
+            <ul>
+                <li><a href="https://docs.github.com/en/actions" target="_blank">GitHub Docs: Actions</a></li>
+            </ul>
+        `,
+        type: 'optional'
+    }
 };
 
 // Funcții pentru gestionarea progresului
